@@ -1,0 +1,43 @@
+#{extends 'main.html' /} #{set title:'Home' /}
+<script type="text/javascript" charset="${_response_encoding}">
+	$(function() {
+		var dates = $("#from, #to")
+				.datepicker(
+						{
+							defaultDate : "+1",
+							changeMonth : true,
+							numberOfMonths : 2,
+							onSelect : function(selectedDate) {
+								var option = this.id == "from" ? "minDate"
+										: "maxDate", instance = $(this).data(
+										"datepicker"), date = $.datepicker
+										.parseDate(
+												instance.settings.dateFormat
+														|| $.datepicker._defaults.dateFormat,
+												selectedDate, instance.settings);
+								dates.not(this).datepicker("option", option,
+										date);
+							}
+						});
+
+		$('#searchForm').ajaxForm({
+			target : '#rooms',
+			success : processJson
+		});
+
+		function processJson(data) {
+			$("#rooms").fadeIn();
+		}
+	});
+</script>
+<div id="bg">
+	<div id="D_info">
+		<div id="D_info_left">#{search_from hotels:hotels/}</div>
+		<div id="D_info_right">
+			<ul style="list-style-type: none; margin: 0px; padding: 0px;">
+				<li style="color: #E9D8B1; font-size: 14px; padding-bottom: 12px;">请选择房间类型</li>
+			</ul>
+			<div id="rooms"></div>
+		</div>
+	</div>
+</div>

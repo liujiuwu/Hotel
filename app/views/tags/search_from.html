@@ -1,0 +1,16 @@
+<form id="searchForm" action="@{Application.search()}" method="post" accept-charset="${_response_encoding}">
+	<ul style="list-style-type: none; margin: 0px; padding: 0px;">
+		<li style="color: #E9D8B1; font-size: 14px; padding-bottom: 15px;">查找可预订客房</li>
+		<li style="padding-bottom: 20px;">请确定入住或退房日期，或从日历中挑选日期。</li>
+	</ul>
+	<ul style="list-style-type: none; margin: 0px; padding: 0px; border: 1px solid #C9AF83; padding: 10px; width: 240px; height: 210px;" class="left_box">
+		<li>选择酒店： <select name="hotelId" class="form"> #{list _hotels, as:'hotel'}
+				<option value="${hotel.hotelId}" #{if hotel.hotelId==hotelId}selected="true"#{/if}>${hotel.name}</option> #{/list}
+		</select></li>
+		<li>入住时间：</li>
+		<li><input type="text" id="from" name="from" value="${startTime}" /></li>
+		<li>退房日期：</li>
+		<li><input type="text" id="to" name="to" value="${endTime}" /></li>
+		<li><input name="imageField" type="image" src="@{'/public/images/submit_001.gif'}" width="160" height="20" border="0"></li>
+	</ul>
+</form>

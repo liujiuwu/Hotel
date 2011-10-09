@@ -1,0 +1,96 @@
+#{extends 'main.html' /} #{set title:'Home' /} #{set 'moreScripts'}
+<script src="@{'/public/javascripts/jquery.ui.timepicker.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+#{/set} #{set 'moreStyles'}
+<link rel="stylesheet" type="text/css" media="screen" href="@{'/public/stylesheets/jquery.ui.timepicker.css'}" />
+#{/set}
+
+<script type="text/javascript" charset="${_response_encoding}">
+	$(function() {
+		$('#timepicker').timepicker({
+			defaultTime : '12:00',
+			hourText : '时',
+			minuteText : '分',
+			amPmText : [ '上午', '下午' ],
+			showOn : 'button',
+			button : '.timepicker_button_trigger'
+		});
+	});
+</script>
+<div id="bg">
+	<div id="D_info">
+		<div id="D_info_left">
+			<ul style="list-style-type: none; margin: 0px; padding: 0px;">
+				<li style="color: #E9D8B1; font-size: 14px; padding-bottom: 15px;">核对预订单信息</li>
+			</ul>
+			<ul style="list-style-type: none; margin: 0px; padding: 0px; border: 1px solid #C9AF83; padding: 10px; width: 240px; height: 240px;" class="left_box">
+				<li><strong>入住日期：</strong> ${startTime}</li>
+				<li><strong>房 间：</strong>1间</li>
+				<li><strong>退房日期： </strong> ${endTime}</li>
+				<li><strong>房 费：</strong> RMB ${room.rate}</li>
+				<li><strong>条款写细则：</strong>
+				</li>
+				<li>按国际惯例，酒店入住时间为14：00，离店时间为正午12：00。若无预订定金保证订房或告知确切航班时间，订房仅保留至下午6点。如提前入住或推迟离店，均须酌情加收一定的费用。</li>
+			</ul>
+		</div>
+		<div id="D_info_right">
+			<ul style="list-style-type: none; margin: 0px; padding: 0px;">
+				<li style="color: #E9D8B1; font-size: 14px; padding-bottom: 12px;">入住信息</li>
+			</ul>
+
+			<div class="list1_box">
+				<form id="booking" action="@{Application.confirmBooking()}" method="post" accept-charset="${_response_encoding}">
+					<input type="hidden" name="from" value="${startTime}" /> <input type="hidden" name="to" value="${endTime}" />
+					<ul style="float: left; list-style-type: none; margin: 0px; padding: 0px; width: 600px; height: 40px;">
+						<li class="list_box_1" style="width: 240px;">预计到店时间： <input id="timepicker" type="text" style="width: 40px" readonly="readonly" disabled="disabled" value="12:00" />
+							<button class='timepicker_button_trigger' id="btn_trigger_timepicker">选择时间</button></li>
+						<li class="list_box_1" style="width: 180px;">预订房间： <select name="roomNumber" class="form" style="width: 80px">
+								#{list 1..avail, as:'i'}
+							        <option value="${i}">${i}间</option>
+							    #{/list} 
+						</select>
+						</li>
+						<li class="list_box_1" style="width: 180px;">预计人数： <select name="guestNumber" class="form" style="width: 80px">
+								<option selected="true" value="1">1人</option>
+								<option value="2">2人</option>
+								<option value="3">3人</option>
+								<option value="4">4人</option>
+								<option value="5">5人</option>
+								<option value="6">6人</option>
+								<option value="7">7人</option>
+								<option value="8">8人</option>
+								<option value="9">9人</option>
+						</select>
+						</li>
+					</ul>
+
+
+					<ul style="float: left; list-style-type: none; margin: 0px; padding: 0px; width: 600px; margin-bottom: 5px; border-top: 1px solid #4B3226">
+						<li style="height: 25px; padding-top: 10px;">联系人信息</li>
+						<li class="list_box_1" style="width: 150px; height: 50px;"><label for="name">姓名：</label><br> <input id="name" type="text" name="name" class="form">
+						</li>
+						<li class="list_box_1" style="width: 150px; height: 50px;"><label for="birthday">出生日期：</label><br> <input id="birthday" type="text" name="birthday" class="form">
+						</li>
+						<li class="list_box_1" style="width: 150px; height: 50px;"><label for="cardNumber">贵宾卡号：</label><br> <input id="cardNumber" type="text" name="cardNumber" class="form" style="width:180px">
+						</li>
+						</li>
+					</ul>
+
+
+
+					<ul style="float: left; list-style-type: none; margin: 0px; padding: 0px; width: 600px; margin-bottom: 5px">
+						<li class="list_box_1" style="width: 150px; height: 50px;"><label for="mobile">手机：</label><br> <input id="mobile" type="text" name="mobile" class="form">
+						<li class="list_box_1" style="width: 150px; height: 50px;"><label for="phone">联系电话：</label><br> <input id="phone" type="text" name="phone" class="form">
+						</li>
+						<li class="list_box_1" style="width: 150px; height: 50px;"><label for="fax">传真：</label><br> <input id="fax" type="text" name="fax" class="form">
+						</li>
+						<li class="list_box_1" style="width: 150px; height: 50px;"><label for="email">E-mail：</label><br> <input id="email" type="text" name="email" class="form">
+						</li>
+					</ul>
+					<ul style="float: left; list-style-type: none; margin: 0px; padding: 0px; width: 600px;">
+						<li><input name="imageField" type="image" src="@{'/public/images/submit_003.gif'}" width="141" height="23" border="0"></li>
+					</ul>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

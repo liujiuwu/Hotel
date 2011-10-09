@@ -1,0 +1,1550 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="RateQueryWeb">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="city" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="hotelId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="brand" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="roomType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="arriveTime" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="departureTime" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="guestNumber" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="roomNumber" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="money" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="money1" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="rateCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="hGuest" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="hCompany" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="hAgency" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="hRoomCenter" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="closed" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="src" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RateQueryWebResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RateQueryWebResult">
+              <s:complexType>
+                <s:sequence>
+                  
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MakeWebRes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HotelID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ms" type="tns:MasterStruct" />
+            <s:element minOccurs="0" maxOccurs="1" name="gs" type="tns:GuestStruct" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="MasterStruct">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="hReserve" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="hGuest" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GroupNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="roomType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="upgrade" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="upgradeReason" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="roomNumber" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="roomNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="bDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="state" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="reserveState" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="arriveTime" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="departureTime" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="agent" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="company" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="roomCenter" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="xClass" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="source" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="market" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="reserveType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="channel" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="share" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="guestNumber" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="children" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="rateCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="packages" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="roomRate" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="setRate" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="discount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="discount1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="payCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="credCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="credUnit" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="applName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="applicant" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="arAccount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fax" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="arriveDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="arriveInfo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="arriveCar" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="arriveRate" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="departureDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="departureInfo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="departureCar" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="departureRate" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="extra" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="srqs" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="amenties" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="master" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="reserveNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="crsNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="remark" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="saleid" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cmscode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cardCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cardNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="reserveBy" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="reserveTime" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="checkInBy" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="checkInTime" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="checkOutBy" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="checkOutTime" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="departureBy" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="depTime" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="changeBy" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="changeTime" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="exp_s1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="exp_s2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="exp_s3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="pcrec" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="comsg" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="GuestStruct">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="amenities" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="hRecord" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="xState" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="hotelId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="central" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="lName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="name2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="name3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="xClass" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="latency" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="source" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="market" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="vip" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="keep" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="belong" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sex" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="title" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="salutation" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="birthday" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="race" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="religion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="occupation" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nationality" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="identityClass" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="identity" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="identityEnd" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="cusno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="unit" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="country" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="state" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="city" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="street" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="zip" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mobile" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fax" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="wetSite" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="country1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="state1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="city1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="street1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="zip1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mobile1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="phone1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fax1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="email1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="visaId" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="visaEnd" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="visaNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="visaUnit" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="specialRequest" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="feature" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="roomPrefer" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="interest" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="lawman" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="regno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="bank" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="bankNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="taxNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="extraInfo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ref1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ref2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ref3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="remark" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="arriveTime" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="depatureTime" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="arAccount1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="arAccount2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="master" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="createBy" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="createTime" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="changedBy" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="changedTime" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="town" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="town1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cardCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cardNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="saleid" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="grade" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="class1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="class2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="class3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="class4" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="liason" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="liason1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="comment" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="MakeWebResResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MakeWebResResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WSAuthHeader" type="tns:WSAuthHeader" />
+      <s:complexType name="WSAuthHeader">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="MakeWebRes_Short">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="hotelid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="roomType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="roomNumber" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="rateCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="rate" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="arriveTime" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="departureTime" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="guestNumber" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="birthday" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mobile" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fax" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cardNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MakeWebRes_ShortResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MakeWebRes_ShortResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModifyWebRes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="orderNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="hotelid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="masterStruct" type="tns:MasterStruct" />
+            <s:element minOccurs="0" maxOccurs="1" name="guestStruct" type="tns:GuestStruct" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModifyWebResResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ModifyWebResResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModifyWebRes_Short">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="orderNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="hotelid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="roomType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="roomNumber" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="rateCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="rate" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="arriveTime" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="departureTime" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="guestNumber" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="birthday" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mobile" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fax" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cardNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModifyWebRes_ShortResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ModifyWebRes_ShortResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CancelWebRes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="orderNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="hotelid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CancelWebResResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CancelWebResResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWebRes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="orderNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="hotelid" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="begin_" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="end_" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="guestno" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWebResResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetWebResResult">
+              <s:complexType>
+                <s:sequence>
+                  
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMyResList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cardNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="hotelid" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="begin_" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="end_" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMyResListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMyResListResult">
+              <s:complexType>
+                <s:sequence>
+                  
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHotelInfoList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="hotelid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="city" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="brand" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHotelInfoListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetHotelInfoListResult">
+              <s:complexType>
+                <s:sequence>
+                  
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetResHis_by_Cardno">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cardno" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetResHis_by_CardnoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetResHis_by_CardnoResult">
+              <s:complexType>
+                <s:sequence>
+                  
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCardInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CardNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCardInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCardInfoResult">
+              <s:complexType>
+                <s:sequence>
+                  
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModifyCard">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cardNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="guestStruct" type="tns:GuestStruct" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModifyCardResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ModifyCardResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPointList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CardNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BeginDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EndDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPointListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPointListResult">
+              <s:complexType>
+                <s:sequence>
+                  
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVipAccountInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CardNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVipAccountInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetVipAccountInfoResult">
+              <s:complexType>
+                <s:sequence>
+                  
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FreezeCard">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CardNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FreezeCardResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FreezeCardResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModifyPassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cardNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NewPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModifyPasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ModifyPasswordResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetConsumeList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CardNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BeginDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EndDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetConsumeListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetConsumeListResult">
+              <s:complexType>
+                <s:sequence>
+                  
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NewCard">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="guestStruct" type="tns:GuestStruct" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NewCardResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NewCardResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCategory">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetCategoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCategoryResult">
+              <s:complexType>
+                <s:sequence>
+                  
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetExchageList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Category" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Class" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PageNo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="PageSize" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetExchageListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetExchageListResult">
+              <s:complexType>
+                <s:sequence>
+                  
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateChangeOrderBatch">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CardNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProductList" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="street" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="zip" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateChangeOrderBatchResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateChangeOrderBatchResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGreeting">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGreetingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetGreetingResult">
+              <s:complexType>
+                <s:sequence>
+                  
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBase_Occupation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBase_OccupationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBase_OccupationResult">
+              <s:complexType>
+                <s:sequence>
+                  
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRewardsList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetRewardsListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRewardsListResult">
+              <s:complexType>
+                <s:sequence>
+                  
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="test">
+        <s:complexType />
+      </s:element>
+      <s:element name="testResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="testResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="RateQueryWebSoapIn">
+    <wsdl:part name="parameters" element="tns:RateQueryWeb" />
+  </wsdl:message>
+  <wsdl:message name="RateQueryWebSoapOut">
+    <wsdl:part name="parameters" element="tns:RateQueryWebResponse" />
+  </wsdl:message>
+  <wsdl:message name="MakeWebResSoapIn">
+    <wsdl:part name="parameters" element="tns:MakeWebRes" />
+  </wsdl:message>
+  <wsdl:message name="MakeWebResSoapOut">
+    <wsdl:part name="parameters" element="tns:MakeWebResResponse" />
+  </wsdl:message>
+  <wsdl:message name="MakeWebResWSAuthHeader">
+    <wsdl:part name="WSAuthHeader" element="tns:WSAuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="MakeWebRes_ShortSoapIn">
+    <wsdl:part name="parameters" element="tns:MakeWebRes_Short" />
+  </wsdl:message>
+  <wsdl:message name="MakeWebRes_ShortSoapOut">
+    <wsdl:part name="parameters" element="tns:MakeWebRes_ShortResponse" />
+  </wsdl:message>
+  <wsdl:message name="MakeWebRes_ShortWSAuthHeader">
+    <wsdl:part name="WSAuthHeader" element="tns:WSAuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="ModifyWebResSoapIn">
+    <wsdl:part name="parameters" element="tns:ModifyWebRes" />
+  </wsdl:message>
+  <wsdl:message name="ModifyWebResSoapOut">
+    <wsdl:part name="parameters" element="tns:ModifyWebResResponse" />
+  </wsdl:message>
+  <wsdl:message name="ModifyWebResWSAuthHeader">
+    <wsdl:part name="WSAuthHeader" element="tns:WSAuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="ModifyWebRes_ShortSoapIn">
+    <wsdl:part name="parameters" element="tns:ModifyWebRes_Short" />
+  </wsdl:message>
+  <wsdl:message name="ModifyWebRes_ShortSoapOut">
+    <wsdl:part name="parameters" element="tns:ModifyWebRes_ShortResponse" />
+  </wsdl:message>
+  <wsdl:message name="ModifyWebRes_ShortWSAuthHeader">
+    <wsdl:part name="WSAuthHeader" element="tns:WSAuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="CancelWebResSoapIn">
+    <wsdl:part name="parameters" element="tns:CancelWebRes" />
+  </wsdl:message>
+  <wsdl:message name="CancelWebResSoapOut">
+    <wsdl:part name="parameters" element="tns:CancelWebResResponse" />
+  </wsdl:message>
+  <wsdl:message name="CancelWebResWSAuthHeader">
+    <wsdl:part name="WSAuthHeader" element="tns:WSAuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetWebResSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWebRes" />
+  </wsdl:message>
+  <wsdl:message name="GetWebResSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWebResResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetWebResWSAuthHeader">
+    <wsdl:part name="WSAuthHeader" element="tns:WSAuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetMyResListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMyResList" />
+  </wsdl:message>
+  <wsdl:message name="GetMyResListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMyResListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMyResListWSAuthHeader">
+    <wsdl:part name="WSAuthHeader" element="tns:WSAuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetHotelInfoListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetHotelInfoList" />
+  </wsdl:message>
+  <wsdl:message name="GetHotelInfoListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetHotelInfoListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetHotelInfoListWSAuthHeader">
+    <wsdl:part name="WSAuthHeader" element="tns:WSAuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetResHis_by_CardnoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetResHis_by_Cardno" />
+  </wsdl:message>
+  <wsdl:message name="GetResHis_by_CardnoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetResHis_by_CardnoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetResHis_by_CardnoWSAuthHeader">
+    <wsdl:part name="WSAuthHeader" element="tns:WSAuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetCardInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCardInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetCardInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCardInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCardInfoWSAuthHeader">
+    <wsdl:part name="WSAuthHeader" element="tns:WSAuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="ModifyCardSoapIn">
+    <wsdl:part name="parameters" element="tns:ModifyCard" />
+  </wsdl:message>
+  <wsdl:message name="ModifyCardSoapOut">
+    <wsdl:part name="parameters" element="tns:ModifyCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="ModifyCardWSAuthHeader">
+    <wsdl:part name="WSAuthHeader" element="tns:WSAuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetPointListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPointList" />
+  </wsdl:message>
+  <wsdl:message name="GetPointListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPointListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPointListWSAuthHeader">
+    <wsdl:part name="WSAuthHeader" element="tns:WSAuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetVipAccountInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVipAccountInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetVipAccountInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVipAccountInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVipAccountInfoWSAuthHeader">
+    <wsdl:part name="WSAuthHeader" element="tns:WSAuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="FreezeCardSoapIn">
+    <wsdl:part name="parameters" element="tns:FreezeCard" />
+  </wsdl:message>
+  <wsdl:message name="FreezeCardSoapOut">
+    <wsdl:part name="parameters" element="tns:FreezeCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="FreezeCardWSAuthHeader">
+    <wsdl:part name="WSAuthHeader" element="tns:WSAuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="ModifyPasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:ModifyPassword" />
+  </wsdl:message>
+  <wsdl:message name="ModifyPasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:ModifyPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="ModifyPasswordWSAuthHeader">
+    <wsdl:part name="WSAuthHeader" element="tns:WSAuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetConsumeListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetConsumeList" />
+  </wsdl:message>
+  <wsdl:message name="GetConsumeListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetConsumeListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetConsumeListWSAuthHeader">
+    <wsdl:part name="WSAuthHeader" element="tns:WSAuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="NewCardSoapIn">
+    <wsdl:part name="parameters" element="tns:NewCard" />
+  </wsdl:message>
+  <wsdl:message name="NewCardSoapOut">
+    <wsdl:part name="parameters" element="tns:NewCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="NewCardWSAuthHeader">
+    <wsdl:part name="WSAuthHeader" element="tns:WSAuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetCategorySoapIn">
+    <wsdl:part name="parameters" element="tns:GetCategory" />
+  </wsdl:message>
+  <wsdl:message name="GetCategorySoapOut">
+    <wsdl:part name="parameters" element="tns:GetCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetExchageListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetExchageList" />
+  </wsdl:message>
+  <wsdl:message name="GetExchageListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetExchageListResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateChangeOrderBatchSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateChangeOrderBatch" />
+  </wsdl:message>
+  <wsdl:message name="CreateChangeOrderBatchSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateChangeOrderBatchResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetGreetingSoapIn">
+    <wsdl:part name="parameters" element="tns:GetGreeting" />
+  </wsdl:message>
+  <wsdl:message name="GetGreetingSoapOut">
+    <wsdl:part name="parameters" element="tns:GetGreetingResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetGreetingWSAuthHeader">
+    <wsdl:part name="WSAuthHeader" element="tns:WSAuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetBase_OccupationSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBase_Occupation" />
+  </wsdl:message>
+  <wsdl:message name="GetBase_OccupationSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBase_OccupationResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBase_OccupationWSAuthHeader">
+    <wsdl:part name="WSAuthHeader" element="tns:WSAuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetRewardsListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRewardsList" />
+  </wsdl:message>
+  <wsdl:message name="GetRewardsListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRewardsListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRewardsListWSAuthHeader">
+    <wsdl:part name="WSAuthHeader" element="tns:WSAuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="testSoapIn">
+    <wsdl:part name="parameters" element="tns:test" />
+  </wsdl:message>
+  <wsdl:message name="testSoapOut">
+    <wsdl:part name="parameters" element="tns:testResponse" />
+  </wsdl:message>
+  <wsdl:message name="testWSAuthHeader">
+    <wsdl:part name="WSAuthHeader" element="tns:WSAuthHeader" />
+  </wsdl:message>
+  <wsdl:portType name="wsDataEngineForWebSiteSoap">
+    <wsdl:operation name="RateQueryWeb">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">房价查询</wsdl:documentation>
+      <wsdl:input message="tns:RateQueryWebSoapIn" />
+      <wsdl:output message="tns:RateQueryWebSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MakeWebRes">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">新建预订</wsdl:documentation>
+      <wsdl:input message="tns:MakeWebResSoapIn" />
+      <wsdl:output message="tns:MakeWebResSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MakeWebRes_Short">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">新建预订_简化</wsdl:documentation>
+      <wsdl:input message="tns:MakeWebRes_ShortSoapIn" />
+      <wsdl:output message="tns:MakeWebRes_ShortSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifyWebRes">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">修改订单</wsdl:documentation>
+      <wsdl:input message="tns:ModifyWebResSoapIn" />
+      <wsdl:output message="tns:ModifyWebResSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifyWebRes_Short">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">修改订单_简化</wsdl:documentation>
+      <wsdl:input message="tns:ModifyWebRes_ShortSoapIn" />
+      <wsdl:output message="tns:ModifyWebRes_ShortSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelWebRes">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">取消订单</wsdl:documentation>
+      <wsdl:input message="tns:CancelWebResSoapIn" />
+      <wsdl:output message="tns:CancelWebResSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWebRes">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取订单</wsdl:documentation>
+      <wsdl:input message="tns:GetWebResSoapIn" />
+      <wsdl:output message="tns:GetWebResSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMyResList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">根据卡号获取订单列表</wsdl:documentation>
+      <wsdl:input message="tns:GetMyResListSoapIn" />
+      <wsdl:output message="tns:GetMyResListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHotelInfoList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取酒店信息</wsdl:documentation>
+      <wsdl:input message="tns:GetHotelInfoListSoapIn" />
+      <wsdl:output message="tns:GetHotelInfoListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetResHis_by_Cardno">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">根据卡号获得订单列表</wsdl:documentation>
+      <wsdl:input message="tns:GetResHis_by_CardnoSoapIn" />
+      <wsdl:output message="tns:GetResHis_by_CardnoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCardInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">根据会员卡号、密码、类别获取会员信息</wsdl:documentation>
+      <wsdl:input message="tns:GetCardInfoSoapIn" />
+      <wsdl:output message="tns:GetCardInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifyCard">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">修改卡信息，修改卡信息和修改密码分开，此处密码将作为验证信息</wsdl:documentation>
+      <wsdl:input message="tns:ModifyCardSoapIn" />
+      <wsdl:output message="tns:ModifyCardSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPointList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取某一会员的积分记录</wsdl:documentation>
+      <wsdl:input message="tns:GetPointListSoapIn" />
+      <wsdl:output message="tns:GetPointListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVipAccountInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">网站上的“我的帐户”功能</wsdl:documentation>
+      <wsdl:input message="tns:GetVipAccountInfoSoapIn" />
+      <wsdl:output message="tns:GetVipAccountInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FreezeCard">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">挂失卡（先冻结再挂失，本函数只负责将卡冻结，在由前台人工重发卡来实现“挂失重发”）</wsdl:documentation>
+      <wsdl:input message="tns:FreezeCardSoapIn" />
+      <wsdl:output message="tns:FreezeCardSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifyPassword">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">修改贵宾卡的网上密码</wsdl:documentation>
+      <wsdl:input message="tns:ModifyPasswordSoapIn" />
+      <wsdl:output message="tns:ModifyPasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConsumeList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取消费列表</wsdl:documentation>
+      <wsdl:input message="tns:GetConsumeListSoapIn" />
+      <wsdl:output message="tns:GetConsumeListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NewCard">
+      <wsdl:input message="tns:NewCardSoapIn" />
+      <wsdl:output message="tns:NewCardSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCategory">
+      <wsdl:input message="tns:GetCategorySoapIn" />
+      <wsdl:output message="tns:GetCategorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExchageList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Change Score to Gifts</wsdl:documentation>
+      <wsdl:input message="tns:GetExchageListSoapIn" />
+      <wsdl:output message="tns:GetExchageListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateChangeOrderBatch">
+      <wsdl:input message="tns:CreateChangeOrderBatchSoapIn" />
+      <wsdl:output message="tns:CreateChangeOrderBatchSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGreeting">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取'称呼'的代码</wsdl:documentation>
+      <wsdl:input message="tns:GetGreetingSoapIn" />
+      <wsdl:output message="tns:GetGreetingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBase_Occupation">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取'职位'的代码</wsdl:documentation>
+      <wsdl:input message="tns:GetBase_OccupationSoapIn" />
+      <wsdl:output message="tns:GetBase_OccupationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRewardsList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取奖品列表</wsdl:documentation>
+      <wsdl:input message="tns:GetRewardsListSoapIn" />
+      <wsdl:output message="tns:GetRewardsListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="test">
+      <wsdl:input message="tns:testSoapIn" />
+      <wsdl:output message="tns:testSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="wsDataEngineForWebSiteSoap" type="tns:wsDataEngineForWebSiteSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RateQueryWeb">
+      <soap:operation soapAction="http://tempuri.org/RateQueryWeb" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MakeWebRes">
+      <soap:operation soapAction="http://tempuri.org/MakeWebRes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:MakeWebResWSAuthHeader" part="WSAuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MakeWebRes_Short">
+      <soap:operation soapAction="http://tempuri.org/MakeWebRes_Short" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:MakeWebRes_ShortWSAuthHeader" part="WSAuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyWebRes">
+      <soap:operation soapAction="http://tempuri.org/ModifyWebRes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ModifyWebResWSAuthHeader" part="WSAuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyWebRes_Short">
+      <soap:operation soapAction="http://tempuri.org/ModifyWebRes_Short" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ModifyWebRes_ShortWSAuthHeader" part="WSAuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelWebRes">
+      <soap:operation soapAction="http://tempuri.org/CancelWebRes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CancelWebResWSAuthHeader" part="WSAuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWebRes">
+      <soap:operation soapAction="http://tempuri.org/GetWebRes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetWebResWSAuthHeader" part="WSAuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMyResList">
+      <soap:operation soapAction="http://tempuri.org/GetMyResList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetMyResListWSAuthHeader" part="WSAuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHotelInfoList">
+      <soap:operation soapAction="http://tempuri.org/GetHotelInfoList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetHotelInfoListWSAuthHeader" part="WSAuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResHis_by_Cardno">
+      <soap:operation soapAction="http://tempuri.org/GetResHis_by_Cardno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetResHis_by_CardnoWSAuthHeader" part="WSAuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardInfo">
+      <soap:operation soapAction="http://tempuri.org/GetCardInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetCardInfoWSAuthHeader" part="WSAuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyCard">
+      <soap:operation soapAction="http://tempuri.org/ModifyCard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ModifyCardWSAuthHeader" part="WSAuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPointList">
+      <soap:operation soapAction="http://tempuri.org/GetPointList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetPointListWSAuthHeader" part="WSAuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVipAccountInfo">
+      <soap:operation soapAction="http://tempuri.org/GetVipAccountInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetVipAccountInfoWSAuthHeader" part="WSAuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FreezeCard">
+      <soap:operation soapAction="http://tempuri.org/FreezeCard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:FreezeCardWSAuthHeader" part="WSAuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyPassword">
+      <soap:operation soapAction="http://tempuri.org/ModifyPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ModifyPasswordWSAuthHeader" part="WSAuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConsumeList">
+      <soap:operation soapAction="http://tempuri.org/GetConsumeList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetConsumeListWSAuthHeader" part="WSAuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewCard">
+      <soap:operation soapAction="http://tempuri.org/NewCard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:NewCardWSAuthHeader" part="WSAuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCategory">
+      <soap:operation soapAction="http://tempuri.org/GetCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExchageList">
+      <soap:operation soapAction="http://tempuri.org/GetExchageList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateChangeOrderBatch">
+      <soap:operation soapAction="http://tempuri.org/CreateChangeOrderBatch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGreeting">
+      <soap:operation soapAction="http://tempuri.org/GetGreeting" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetGreetingWSAuthHeader" part="WSAuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBase_Occupation">
+      <soap:operation soapAction="http://tempuri.org/GetBase_Occupation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetBase_OccupationWSAuthHeader" part="WSAuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRewardsList">
+      <soap:operation soapAction="http://tempuri.org/GetRewardsList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetRewardsListWSAuthHeader" part="WSAuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="test">
+      <soap:operation soapAction="http://tempuri.org/test" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:testWSAuthHeader" part="WSAuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="wsDataEngineForWebSiteSoap12" type="tns:wsDataEngineForWebSiteSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RateQueryWeb">
+      <soap12:operation soapAction="http://tempuri.org/RateQueryWeb" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MakeWebRes">
+      <soap12:operation soapAction="http://tempuri.org/MakeWebRes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:MakeWebResWSAuthHeader" part="WSAuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MakeWebRes_Short">
+      <soap12:operation soapAction="http://tempuri.org/MakeWebRes_Short" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:MakeWebRes_ShortWSAuthHeader" part="WSAuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyWebRes">
+      <soap12:operation soapAction="http://tempuri.org/ModifyWebRes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ModifyWebResWSAuthHeader" part="WSAuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyWebRes_Short">
+      <soap12:operation soapAction="http://tempuri.org/ModifyWebRes_Short" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ModifyWebRes_ShortWSAuthHeader" part="WSAuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelWebRes">
+      <soap12:operation soapAction="http://tempuri.org/CancelWebRes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CancelWebResWSAuthHeader" part="WSAuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWebRes">
+      <soap12:operation soapAction="http://tempuri.org/GetWebRes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetWebResWSAuthHeader" part="WSAuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMyResList">
+      <soap12:operation soapAction="http://tempuri.org/GetMyResList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetMyResListWSAuthHeader" part="WSAuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHotelInfoList">
+      <soap12:operation soapAction="http://tempuri.org/GetHotelInfoList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetHotelInfoListWSAuthHeader" part="WSAuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResHis_by_Cardno">
+      <soap12:operation soapAction="http://tempuri.org/GetResHis_by_Cardno" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetResHis_by_CardnoWSAuthHeader" part="WSAuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetCardInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetCardInfoWSAuthHeader" part="WSAuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyCard">
+      <soap12:operation soapAction="http://tempuri.org/ModifyCard" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ModifyCardWSAuthHeader" part="WSAuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPointList">
+      <soap12:operation soapAction="http://tempuri.org/GetPointList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetPointListWSAuthHeader" part="WSAuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVipAccountInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetVipAccountInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetVipAccountInfoWSAuthHeader" part="WSAuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FreezeCard">
+      <soap12:operation soapAction="http://tempuri.org/FreezeCard" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:FreezeCardWSAuthHeader" part="WSAuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyPassword">
+      <soap12:operation soapAction="http://tempuri.org/ModifyPassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ModifyPasswordWSAuthHeader" part="WSAuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConsumeList">
+      <soap12:operation soapAction="http://tempuri.org/GetConsumeList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetConsumeListWSAuthHeader" part="WSAuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewCard">
+      <soap12:operation soapAction="http://tempuri.org/NewCard" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:NewCardWSAuthHeader" part="WSAuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCategory">
+      <soap12:operation soapAction="http://tempuri.org/GetCategory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExchageList">
+      <soap12:operation soapAction="http://tempuri.org/GetExchageList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateChangeOrderBatch">
+      <soap12:operation soapAction="http://tempuri.org/CreateChangeOrderBatch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGreeting">
+      <soap12:operation soapAction="http://tempuri.org/GetGreeting" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetGreetingWSAuthHeader" part="WSAuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBase_Occupation">
+      <soap12:operation soapAction="http://tempuri.org/GetBase_Occupation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetBase_OccupationWSAuthHeader" part="WSAuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRewardsList">
+      <soap12:operation soapAction="http://tempuri.org/GetRewardsList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetRewardsListWSAuthHeader" part="WSAuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="test">
+      <soap12:operation soapAction="http://tempuri.org/test" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:testWSAuthHeader" part="WSAuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="wsDataEngineForWebSite">
+    <wsdl:port name="wsDataEngineForWebSiteSoap" binding="tns:wsDataEngineForWebSiteSoap">
+      <soap:address location="http://218.14.215.13:8080/DataEngine/wsDataEngineForWebSite.asmx" />
+    </wsdl:port>
+    <wsdl:port name="wsDataEngineForWebSiteSoap12" binding="tns:wsDataEngineForWebSiteSoap12">
+      <soap12:address location="http://218.14.215.13:8080/DataEngine/wsDataEngineForWebSite.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

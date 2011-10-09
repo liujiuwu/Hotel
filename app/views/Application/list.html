@@ -1,0 +1,20 @@
+#{list rooms, as:'room'}
+<div class="#{if room_index%2==0}list_box#{/if}#{else}list_box1#{/else}">
+	<form name="roomForm" action="@{Application.book()}" method="post" accept-charset="${_response_encoding}">
+		<ul style="list-style-type: none; margin: 0px; padding: 0px;">
+			<li class="list_box_1" style="width: 200px; padding: 4px 0 0 10px;">${room.roomName}</li>
+			<li class="list_box_1" style="width: 100px; padding-top: 4px; text-align: right;">RMB <span style="color: #FFFFFF;">${room.rate}</span></li>
+			<li class="list_box_1" style="width: 100px; padding-top: 4px; text-align: right;">#{if room.avail<=0}已订完#{/if}#{else}剩余:${room.avail}间#{/else}</span></li>
+			<li style="float: right">#{if room.avail>0}<input name="imageField" type="image" src="@{'/public/images//submit_002.gif'}">#{/if}
+			</li>
+		</ul>
+		<input type="hidden" name="from" value="${startTime}" />
+		<input type="hidden" name="to" value="${endTime}" />
+		<input type="hidden" name="hotelId" value="${room.hotelId}" />
+		<input type="hidden" name="roomName" value="${room.roomName}" />
+		<input type="hidden" name="rate" value="${room.rate}" />
+		<input type="hidden" name="rateCode" value="${room.rateCode}" />
+		<input type="hidden" name="avail" value="${room.avail}" />
+	</form>
+</div>
+#{/list}
