@@ -14,6 +14,11 @@
 			showOn : 'button',
 			button : '.timepicker_button_trigger'
 		});
+		
+		$("#roomNumber").change(function(){
+			$("#room_num").html($(this).val());
+			$("#room_rate").html($(this).val()*${room.rate});
+		});
 	});
 </script>
 <div id="bg">
@@ -24,9 +29,9 @@
 			</ul>
 			<ul style="list-style-type: none; margin: 0px; padding: 0px; border: 1px solid #C9AF83; padding: 10px; width: 240px; height: 240px;" class="left_box">
 				<li><strong>入住日期：</strong> ${startTime}</li>
-				<li><strong>房 间：</strong>1间</li>
-				<li><strong>退房日期： </strong> ${endTime}</li>
-				<li><strong>房 费：</strong> RMB ${room.rate}</li>
+				<li><strong>房 间：</strong>${room.roomName}<span id="room_num" style="padding:0 5px;font-size:16px;font-weight:bold;color:#FFF">1</span>间</li>
+				<li><strong>退房日期：</strong> ${endTime}</li>
+				<li><strong>房 费：</strong> RMB <span id="room_rate">${room.rate}</span></li>
 				<li><strong>条款写细则：</strong>
 				</li>
 				<li>按国际惯例，酒店入住时间为14：00，离店时间为正午12：00。若无预订定金保证订房或告知确切航班时间，订房仅保留至下午6点。如提前入住或推迟离店，均须酌情加收一定的费用。</li>
@@ -39,17 +44,22 @@
 
 			<div class="list1_box">
 				<form id="booking" action="@{Application.confirmBooking()}" method="post" accept-charset="${_response_encoding}">
+				<input type="hidden" name="hotelId" value="${room.hotelId}" />
+				<input type="hidden" name="roomType" value="${room.code}" />
+				<input type="hidden" name="roomName" value="${room.roomName}" />
+				<input type="hidden" name="rate" value="${room.rate}" />
+				<input type="hidden" name="rateCode" value="${room.rateCode}" />
 					<input type="hidden" name="from" value="${startTime}" /> <input type="hidden" name="to" value="${endTime}" />
 					<ul style="float: left; list-style-type: none; margin: 0px; padding: 0px; width: 600px; height: 40px;">
 						<li class="list_box_1" style="width: 240px;">预计到店时间： <input id="timepicker" type="text" style="width: 40px" readonly="readonly" disabled="disabled" value="12:00" />
 							<button class='timepicker_button_trigger' id="btn_trigger_timepicker">选择时间</button></li>
-						<li class="list_box_1" style="width: 180px;">预订房间： <select name="roomNumber" class="form" style="width: 80px">
+						<li class="list_box_1" style="width: 180px;">预订房间： <select id="roomNumber" name="roomNumber" class="form" style="width: 80px">
 								#{list 1..avail, as:'i'}
 							        <option value="${i}">${i}间</option>
 							    #{/list} 
 						</select>
 						</li>
-						<li class="list_box_1" style="width: 180px;">预计人数： <select name="guestNumber" class="form" style="width: 80px">
+						<li class="list_box_1" style="width: 180px;">预计人数： <select id="guestNumber" name="guestNumber" class="form" style="width: 80px">
 								<option selected="true" value="1">1人</option>
 								<option value="2">2人</option>
 								<option value="3">3人</option>

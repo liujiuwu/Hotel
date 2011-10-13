@@ -1,0 +1,14 @@
+#{extends 'main.html' /} #{set title:'Home' /} #{set 'moreScripts'}
+<script src="@{'/public/javascripts/jquery.ui.timepicker.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+#{/set} #{set 'moreStyles'}
+<link rel="stylesheet" type="text/css" media="screen" href="@{'/public/stylesheets/jquery.ui.timepicker.css'}" />
+#{/set}
+
+<div id="bg">
+	<div id="D_info">
+		<span style="font-size:16px">
+		你成功预订了${startTime}至${endTime}的${roomNumber}间${roomName}。<br/>
+		${bookResult}
+		</span>
+	</div>
+</div>
