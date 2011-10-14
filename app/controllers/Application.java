@@ -90,13 +90,14 @@ public class Application extends Controller {
             String rateCode = StringUtils.trimToEmpty(XPath.selectText("ratecode", node));
             String avail = StringUtils.trimToEmpty(XPath.selectText("avail", node));
             newNode = node;
+
             Room room = new Room();
             room.setHotelId(hotelId);
-            room.setRoomName(name);
             room.setCode(code);
-            room.setRate(rate);
+            room.setRoomName(name);
             room.setRateCode(rateCode);
             room.setAvail(NumberUtils.toInt(avail));
+            room.setRate(rate);
             rooms.add(room);
         }
         renderXml(newNode);
@@ -129,14 +130,27 @@ public class Application extends Controller {
             String rate = StringUtils.trimToEmpty(XPath.selectText("rate", node));
             String rateCode = StringUtils.trimToEmpty(XPath.selectText("ratecode", node));
             String avail = StringUtils.trimToEmpty(XPath.selectText("avail", node));
+            Room oldRoom = new Room();
+            oldRoom.setHotelId(hotelId);
+            oldRoom.setCode(code);
+
             Room room = new Room();
-            room.setHotelId(hotelId);
-            room.setRoomName(name);
-            room.setCode(code);
-            room.setRate(rate);
-            room.setRateCode(rateCode);
-            room.setAvail(NumberUtils.toInt(avail));
-            rooms.add(room);
+            if (rooms.contains(oldRoom)) {
+                room = rooms.get(rooms.indexOf(oldRoom));
+            } else {
+                room.setHotelId(hotelId);
+                room.setRoomName(name);
+                room.setCode(code);
+                room.setRateCode(rateCode);
+                room.setAvail(NumberUtils.toInt(avail));
+                rooms.add(room);
+            }
+            
+            if("RACKRATE".equalsIgnoreCase(rateCode)){
+                room.setRackRate(rate);
+            }else{
+                room.setRate(rate);
+            }
         }
         return rooms;
     }
