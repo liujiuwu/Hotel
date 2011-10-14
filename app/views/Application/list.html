@@ -3,7 +3,7 @@
 	<form name="roomForm" action="@{Application.book()}" method="post" accept-charset="${_response_encoding}">
 		<ul style="list-style-type: none; margin: 0px; padding: 0px;">
 			<li class="list_box_1" style="width: 200px; padding: 4px 0 0 10px;">${room.roomName}</li>
-			<li class="list_box_1" style="width: 100px; padding-top: 4px; text-align: right;">RMB <span style="color: #FFFFFF;">${room.rate}</span></li>
+			<li class="list_box_1" style="width: 100px; padding-top: 4px; text-align: right;">#{if room.rateCode=="RACKRATE"}门市价#{/if}#{else}网订价#{/else}:RMB <span style="color: #FFFFFF;">${room.rate}</span></li>
 			<li class="list_box_1" style="width: 100px; padding-top: 4px; text-align: right;">#{if room.avail<=0}已订完#{/if}#{else}剩余:${room.avail}间#{/else}</span></li>
 			<li style="float: right">#{if room.avail>0}<input name="imageField" type="image" src="@{'/public/images//submit_002.gif'}">#{/if}
 			</li>
