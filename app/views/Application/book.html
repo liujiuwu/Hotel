@@ -19,6 +19,10 @@
 			$("#room_num").html($(this).val());
 			$("#room_rate").html($(this).val()*${room.rate});
 		});
+		
+		$(function() {
+			$( "#birthday" ).datepicker({ defaultDate:'-30y',changeMonth: true,changeYear: true,yearRange: '-90:-5',dateFormat: 'yy-mm-dd',constrainInput: false});
+		});
 	});
 </script>
 <div id="bg">
@@ -29,11 +33,11 @@
 			</ul>
 			<ul style="list-style-type: none; margin: 0px; padding: 0px; border: 1px solid #C9AF83; padding: 10px; width: 240px; height: 240px;" class="left_box">
 				<li><strong>入住日期：</strong> ${startTime}</li>
-				<li><strong>房 间：</strong>${room.roomName}<span id="room_num" style="padding:0 5px;font-size:16px;font-weight:bold;color:#FFF">1</span>间</li>
+				<li><strong>房 间：</strong>${room.roomName}<span id="room_num" style="padding: 0 5px; font-size: 16px; font-weight: bold; color: #FFF">1</span>间</li>
 				<li><strong>退房日期：</strong> ${endTime}</li>
-				<li><strong>房 费：</strong> RMB <span id="room_rate">${room.rate}</span></li>
-				<li><strong>条款写细则：</strong>
+				<li><strong>房 费：</strong> RMB <span id="room_rate">${room.rate}</span>
 				</li>
+				<li><strong>条款写细则：</strong></li>
 				<li>按国际惯例，酒店入住时间为14：00，离店时间为正午12：00。若无预订定金保证订房或告知确切航班时间，订房仅保留至下午6点。如提前入住或推迟离店，均须酌情加收一定的费用。</li>
 			</ul>
 		</div>
@@ -44,21 +48,14 @@
 
 			<div class="list1_box">
 				<form id="booking" action="@{Application.confirmBooking()}" method="post" accept-charset="${_response_encoding}">
-				<input type="hidden" name="hotelId" value="${room.hotelId}" />
-				<input type="hidden" name="roomType" value="${room.code}" />
-				<input type="hidden" name="roomName" value="${room.roomName}" />
-				<input type="hidden" name="rate" value="${room.rate}" />
-				<input type="hidden" name="rateCode" value="${room.rateCode}" />
-					<input type="hidden" name="from" value="${startTime}" /> <input type="hidden" name="to" value="${endTime}" />
+					<input type="hidden" name="hotelId" value="${room.hotelId}" /> <input type="hidden" name="roomType" value="${room.code}" /> <input type="hidden" name="roomName" value="${room.roomName}" /> <input type="hidden" name="rate" value="${room.rate}" /> <input type="hidden" name="rateCode" value="${room.rateCode}" /> <input type="hidden" name="from" value="${startTime}" /> <input type="hidden" name="to" value="${endTime}" />
 					<ul style="float: left; list-style-type: none; margin: 0px; padding: 0px; width: 600px; height: 40px;">
 						<li class="list_box_1" style="width: 240px;">预计到店时间： <input id="timepicker" type="text" style="width: 40px" readonly="readonly" disabled="disabled" value="12:00" />
-							<button class='timepicker_button_trigger' id="btn_trigger_timepicker">选择时间</button></li>
-						<li class="list_box_1" style="width: 180px;">预订房间： <select id="roomNumber" name="roomNumber" class="form" style="width: 80px">
-								#{list 1..avail, as:'i'}
-							        <option value="${i}">${i}间</option>
-							    #{/list} 
-						</select>
+							<button class='timepicker_button_trigger' id="btn_trigger_timepicker">选择时间</button>
 						</li>
+						<li class="list_box_1" style="width: 180px;">预订房间： <select id="roomNumber" name="roomNumber" class="form" style="width: 80px"> #{list 1..avail, as:'i'}
+								<option value="${i}">${i}间</option> #{/list}
+						</select></li>
 						<li class="list_box_1" style="width: 180px;">预计人数： <select id="guestNumber" name="guestNumber" class="form" style="width: 80px">
 								<option selected="true" value="1">1人</option>
 								<option value="2">2人</option>
@@ -69,19 +66,15 @@
 								<option value="7">7人</option>
 								<option value="8">8人</option>
 								<option value="9">9人</option>
-						</select>
-						</li>
+						</select></li>
 					</ul>
 
 
 					<ul style="float: left; list-style-type: none; margin: 0px; padding: 0px; width: 600px; margin-bottom: 5px; border-top: 1px solid #4B3226">
 						<li style="height: 25px; padding-top: 10px;">联系人信息</li>
-						<li class="list_box_1" style="width: 150px; height: 50px;"><label for="name">姓名：</label><br> <input id="name" type="text" name="name" class="form">
-						</li>
-						<li class="list_box_1" style="width: 150px; height: 50px;"><label for="birthday">出生日期：</label><br> <input id="birthday" type="text" name="birthday" class="form">
-						</li>
-						<li class="list_box_1" style="width: 150px; height: 50px;"><label for="cardNumber">贵宾卡号：</label><br> <input id="cardNumber" type="text" name="cardNumber" class="form" style="width:180px">
-						</li>
+						<li class="list_box_1" style="width: 150px; height: 50px;"><label for="name">姓名：</label><br> <input id="name" type="text" name="name" class="form"></li>
+						<li class="list_box_1" style="width: 150px; height: 50px;"><label for="birthday">出生日期：</label><br> <input id="birthday" type="text" name="birthday"  readonly="readonly" class="form"></li>
+						<li class="list_box_1" style="width: 150px; height: 50px;"><label for="cardNumber">贵宾卡号：</label><br> <input id="cardNumber" type="text" name="cardNumber" class="form" style="width: 180px"></li>
 						</li>
 					</ul>
 
@@ -89,15 +82,13 @@
 
 					<ul style="float: left; list-style-type: none; margin: 0px; padding: 0px; width: 600px; margin-bottom: 5px">
 						<li class="list_box_1" style="width: 150px; height: 50px;"><label for="mobile">手机：</label><br> <input id="mobile" type="text" name="mobile" class="form">
-						<li class="list_box_1" style="width: 150px; height: 50px;"><label for="phone">联系电话：</label><br> <input id="phone" type="text" name="phone" class="form">
-						</li>
-						<li class="list_box_1" style="width: 150px; height: 50px;"><label for="fax">传真：</label><br> <input id="fax" type="text" name="fax" class="form">
-						</li>
-						<li class="list_box_1" style="width: 150px; height: 50px;"><label for="email">E-mail：</label><br> <input id="email" type="text" name="email" class="form">
-						</li>
+						<li class="list_box_1" style="width: 150px; height: 50px;"><label for="phone">联系电话：</label><br> <input id="phone" type="text" name="phone" class="form"></li>
+						<li class="list_box_1" style="width: 150px; height: 50px;"><label for="fax">传真：</label><br> <input id="fax" type="text" name="fax" class="form"></li>
+						<li class="list_box_1" style="width: 150px; height: 50px;"><label for="email">E-mail：</label><br> <input id="email" type="text" name="email" class="form"></li>
 					</ul>
 					<ul style="float: left; list-style-type: none; margin: 0px; padding: 0px; width: 600px;">
-						<li><input name="imageField" type="image" src="@{'/public/images/submit_003.gif'}" width="141" height="23" border="0"></li>
+						<li><input name="imageField" type="image" src="@{'/public/images/submit_003.gif'}" width="141" height="23" border="0">
+						</li>
 					</ul>
 				</form>
 			</div>
